@@ -1,0 +1,233 @@
+body {
+    user-select: none;
+    font-family: helvetica;
+    color: azure;
+}
+
+#container, #content {
+    position: fixed;
+}
+
+#content {
+    width: 100%;
+    height: 90%;
+}
+
+#container, #contactsScreen, #skillsScreen, #jobScreen, #hobbiesScreen {
+    width: 100%;
+    height: 100%;
+}
+
+#contactsScreen, #skillsScreen, #jobScreen, #hobbiesScreen, #photo {
+    box-shadow: 0 0 0 10px azure inset;
+}
+
+#contactsScreen, #skillsScreen, #jobScreen, #hobbiesScreen,
+#photo, #name, #contactsDetail {
+    position: absolute;
+}
+
+#contactsScreen {
+    visibility: visible;
+    background-color: crimson;
+}
+
+#photo {
+    width: 250px;
+    height: 250px;
+    top: 25%;
+    left: 50%;
+    background: url("../img/contacts/handsome.JPG") no-repeat;
+    background-size: cover;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+#name {
+    text-align: center;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+#contactsDetail {
+    text-align: center;
+    font-size: 45px;
+    top:  75%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+#callMe, #emailMe, #findMe {
+    transition: color 500ms;
+}
+
+#callMe:hover, #emailMe:hover, #findMe:hover {
+    transition: color 500ms;
+    cursor: pointer;
+}
+
+#callMe:hover {
+    color: lawngreen;
+}
+
+#emailMe:hover {
+    color: dodgerblue;
+}
+
+#findMe:hover {
+    color: gold;
+}
+
+#skillsScreen {
+    visibility: hidden;
+    background-color: lawngreen;
+}
+
+#jobScreen {
+    visibility: hidden;
+    background-color: dodgerblue;
+}
+
+#hobbiesScreen {
+    visibility: hidden;
+    background-color: gold;
+}
+
+#navigation {
+    position: relative;
+    top: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+.item, .text {
+    position: relative;
+}
+
+.item {
+    float: left;
+    width: 25%;
+    height: 100%;
+    font-size: 45px;
+}
+
+.text {
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+}
+
+#contactsNav, #skillsNav, #jobsNav, #hobbiesNav {
+    transition: background-color 500ms;
+}
+
+#contactsNav {
+    color: crimson;
+}
+
+.focused {
+    background-color: azure;
+}
+
+.unfocused {
+    background-color: crimson;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+#contactsNav:hover {
+    background-color: crimson;
+}
+
+#skillsNav:hover {
+    background-color: lawngreen;
+}
+
+#jobsNav:hover {
+    background-color: dodgerblue;
+}
+
+#hobbiesNav:hover {
+    background-color: gold;
+}
+
+#contactsNav:hover, #skillsNav:hover, #jobsNav:hover, #hobbiesNav:hover {
+    color: azure;
+    transition: background-color 550ms;
+}
+
+/*media queries*/
+/*iPad landscape media query*/
+@media only screen and (max-width: 1248px) {
+
+
+}
+
+/*iPad portrait media query*/
+@media only screen and (max-width: 768px) {
+
+
+}
+
+/*iPhone 5.5" media query*/
+@media only screen and (max-width: 414px) {
+
+    #photo {
+        width: 225px;
+        height: 225px;
+    }
+
+    #name {
+        font-size: 40px;
+    }
+
+    #contactsDetail {
+        font-size: 30px;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+}
+
+/*iPhone 4.7" portrait media query*/
+@media only screen and (max-width: 375px) {
+
+    #photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    #name {
+        font-size: 35px;
+    }
+
+    #contactsDetail {
+        font-size: 25px;
+    }
+
+}
+
+/*iPhone 4" portrait media query*/
+@media only screen and (max-width: 320px) {
+
+    #photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    #name {
+        font-size: 25px;
+    }
+
+    #contactsDetail {
+        font-size: 20px;
+    }
+
+}
