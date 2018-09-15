@@ -13,22 +13,21 @@ body {
     height: 90%;
 }
 
-#container, #contactsScreen, #skillsScreen, #jobScreen, #hobbiesScreen {
+#container, #contactsScreen, #skillsScreen, #jobsScreen, #reviewScreen {
     width: 100%;
     height: 100%;
 }
 
-#contactsScreen, #skillsScreen, #jobScreen, #hobbiesScreen, #photo {
+#contactsScreen, #skillsScreen, #jobsScreen, #reviewScreen, #photo {
     box-shadow: 0 0 0 10px azure inset;
 }
 
-#contactsScreen, #skillsScreen, #jobScreen, #hobbiesScreen,
+#contactsScreen, #skillsScreen, #jobsScreen, #reviewScreen,
 #photo, #name, #contactsDetail {
     position: absolute;
 }
 
 #contactsScreen {
-    visibility: visible;
     background-color: crimson;
 }
 
@@ -82,17 +81,14 @@ body {
 }
 
 #skillsScreen {
-    visibility: hidden;
     background-color: lawngreen;
 }
 
-#jobScreen {
-    visibility: hidden;
+#jobsScreen {
     background-color: dodgerblue;
 }
 
-#hobbiesScreen {
-    visibility: hidden;
+#reviewScreen {
     background-color: gold;
 }
 
@@ -120,21 +116,46 @@ body {
     height: 100px;
 }
 
-#contactsNav, #skillsNav, #jobsNav, #hobbiesNav {
+#contactsNav, #skillsNav, #jobsNav, #reviewsNav {
     transition: background-color 500ms;
 }
 
-#contactsNav {
+.crimson {
     color: crimson;
+}
+
+.lawngreen {
+    color: lawngreen;
+}
+
+.dodgerblue {
+    color: dodgerblue;
+}
+
+.gold {
+    color: gold;
 }
 
 .focused {
     background-color: azure;
 }
 
-.unfocused {
+.unfocusedCrimson {
     background-color: crimson;
 }
+
+.unfocusedLawngreen {
+    background-color: lawngreen;
+}
+
+.unfocusedDodgerblue {
+    background-color: dodgerblue;
+}
+
+.unfocusedGold {
+    background-color: gold;
+}
+
 
 .item:hover {
     cursor: pointer;
@@ -152,11 +173,11 @@ body {
     background-color: dodgerblue;
 }
 
-#hobbiesNav:hover {
+#reviewsNav:hover {
     background-color: gold;
 }
 
-#contactsNav:hover, #skillsNav:hover, #jobsNav:hover, #hobbiesNav:hover {
+#contactsNav:hover, #skillsNav:hover, #jobsNav:hover, #reviewsNav:hover {
     color: azure;
     transition: background-color 550ms;
 }
