@@ -99,21 +99,27 @@ body {
     height: 100%;
 }
 
-.item, .text {
+.item, .text, .icon {
     position: relative;
+}
+
+.icon {
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .item {
     float: left;
     width: 25%;
     height: 100%;
-    font-size: 45px;
+    font-size: 25px;
 }
 
 .text {
     text-align: center;
-    line-height: 100px;
-    height: 100px;
 }
 
 #contactsNav, #skillsNav, #jobsNav, #reviewsNav {
@@ -211,6 +217,10 @@ body {
         font-size: 30px;
     }
 
+    .icon {
+        margin-top: 15px;
+    }
+
     .text {
         visibility: hidden;
     }
@@ -233,6 +243,10 @@ body {
         font-size: 25px;
     }
 
+    .icon {
+        margin-top: 10px;
+    }
+
 }
 
 /*iPhone 4" portrait media query*/
@@ -249,6 +263,11 @@ body {
 
     #contactsDetail {
         font-size: 20px;
+    }
+
+    .icon {
+        font-size: 30px;
+        margin-top: 12.5px;
     }
 
 }
