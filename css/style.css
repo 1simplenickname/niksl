@@ -69,7 +69,7 @@ body {
 }
 
 #callMe:hover {
-    color: lawngreen;
+    color: limegreen;
 }
 
 #emailMe:hover {
@@ -81,7 +81,7 @@ body {
 }
 
 #skillsScreen {
-    background-color: lawngreen;
+    background-color: limegreen;
 }
 
 #jobsScreen {
@@ -130,8 +130,8 @@ body {
     color: crimson;
 }
 
-.lawngreen {
-    color: lawngreen;
+.limegreen {
+    color: limegreen;
 }
 
 .dodgerblue {
@@ -150,8 +150,8 @@ body {
     background-color: crimson;
 }
 
-.unfocusedLawngreen {
-    background-color: lawngreen;
+.unfocusedLimegreen {
+    background-color: limegreen;
 }
 
 .unfocusedDodgerblue {
@@ -172,7 +172,7 @@ body {
 }
 
 #skillsNav:hover {
-    background-color: lawngreen;
+    background-color: limegreen;
 }
 
 #jobsNav:hover {
