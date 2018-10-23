@@ -113,7 +113,6 @@ body {
 
 #signupEntrance, #loginEntrance {
     float: left;
-    position: relative;
     width: 50%;
     height: 100%;
 }
@@ -150,34 +149,69 @@ body {
 
 #userIcon {
     font-size: 35px;
-    top: 3%;
-    left: 3%;
+    top: 30px;
+    left: 30px;
 }
 #userName {
     font-size: 25px;
     line-height: 25px;
-    top: 3.5%;
-    left: 8%;
+    top: 30px;
+    left: 75px;
 }
 #passwordIcon {
     font-size: 33px;
-    top: 10%;
-    left: 3%;
+    top: 90px;
+    left: 30px;
 }
 
 #userPassword {
     font-size: 25px;
     line-height: 23px;
-    top: 10.5%;
-    left: 8%;
+    top: 90px;
+    left: 75px;
+}
+
+#deleteUserIcon {
+    font-size: 33px;
+    bottom: 30px;
+    left: 30px;
+    position: absolute;
+    color: crimson;
+}
+
+#deleteUserText {
+    font-size: 25px;
+    bottom: 30px;
+    left: 75px;
+    position: absolute;
+    line-height: 30px;
+    color: crimson;
+}
+
+#editUserIcon {
+    font-size: 33px;
+    bottom: 90px;
+    left: 30px;
+    position: absolute;
+    color: limegreen;
+}
+
+#editUserText {
+    font-size: 25px;
+    bottom: 90px;
+    left: 75px;
+    position: absolute;
+    line-height: 30px;
+    color: limegreen;
 }
 
 #reviewHeader {
     top: 18%;
     left: 50%;
-    transform: translateX(-20%);
     font-size: 40px;
     width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
 }
 
 #reviewContainer {
@@ -186,23 +220,14 @@ body {
     transform: translateX(-50%);
 }
 
-input {
-    height: 25px;
-    -webkit-appearance: none;
-    border: 0;
-    width: 300px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
 #reviewInputField {
     width: 300px;
     height: 300px;
 }
 
 #exit {
-    top: 3%;
-    right: 3%;
+    top: 30px;
+    right: 30px;
     font-size: 35px;
     cursor: pointer;
 }
@@ -341,9 +366,25 @@ input {
     transition: background-color 550ms;
 }
 
+input {
+    height: 25px;
+    -webkit-appearance: none;
+    border: 0;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
     color: azure;
+}
+
+::placeholder {
+    color: black;
+    font-weight: normal;
 }
 
 /*media queries*/
@@ -510,3 +551,4 @@ a {
     }
 
 }
+

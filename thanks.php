@@ -1,43 +1,24 @@
 <?php
 
-    include('template.php');
-    session_start();
+    include('php/template.php');
+    include('php/classes.php');
 
-    $server = "localhost:3306";
-    $serverUsername = "root";
-    $serverPassword = "parole123";
-
-    $connection = new mysqli($server, $serverUsername, $serverPassword);
-
-    if ($connection->connect_error) {
-        die("Connection failed: ". $connection->connect_error);
-    }
-
-    mysqli_select_db($connection, "niksl");
-
-    $query = "INSERT INTO reviews (review) VALUES ('$_POST[review]')";
-
-    if ($connection->query($query) === TRUE) {
-    //        echo "New record created successfully";
-    } else {
-        echo "Error: " . $query . "<br>" . $connection->error;
-    }
-
-    $connection->close();
+    niksl::connect();
+    niksl::beginSession();
 
 ?>
 
 <!doctype html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <title>Niks Ļ</title>
-    <!--UTF-8 character support-->
-    <meta charset="UTF-8">
-    <?php generateHeader(); ?>
+        <title>Niks Ļ</title>
+        <!--UTF-8 character support-->
+        <meta charset="UTF-8">
+        <?php template::generateHeader() ?>
 
-</head>
+    </head>
 
     <body>
 
@@ -49,10 +30,31 @@
 
                 <div id="newReview">
 
-                    <span id="thankyouHeader">
-                        Thank you! <br>
-                        Your review is appreciated!
-                    </span>
+                    <?php
+
+                        $review = validate($_POST["review"]);
+
+                        if ($review == "") {
+
+                            echo '<span id="thankyouHeader">
+                                  Error, no fields can be left empty!
+                                  </span>';
+
+                        } else {
+
+                            $query = "INSERT INTO reviews (review, user) VALUES ('$review', '$_SESSION[current_user_id]')";
+                            $check_result = mysqli_query($connection, $query);
+
+                            echo '<span id="thankyouHeader">
+                                  Thank you! <br>
+                                  Your review is appreciated!
+                                  </span>';
+
+                            niksl::disconnect();
+
+                        }
+
+                    ?>
 
                 </div>
 
@@ -60,18 +62,11 @@
 
         </div>
 
-        <?php thankyouNav() ?>
+        <?php template::thankyouNav() ?>
 
     </div>
 
     </body>
-
-    <?php
-
-        session_unset();
-        session_destroy();
-
-    ?>
 
 </html>
 

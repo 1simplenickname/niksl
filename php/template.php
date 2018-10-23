@@ -1,19 +1,21 @@
 <?php
 
-    function generateHeader() {
+class template {
+
+    static function generateHeader() {
 
         echo '<!--Favicons-->
-        <link rel="shortcut icon" href="img/icons/favicon.png">
+        <link rel="shortcut icon" href="../img/icons/favicon.png">
         <!--Display scaling support-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Styling and animations-->
-        <link rel="stylesheet" type="text/css" href="css/reset.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">';
 
     }
 
-    function indexNav() {
+    static function indexNav() {
 
         echo '
             <div id="navigation">
@@ -25,21 +27,21 @@
 
                 </div>
                 <a id="skillsNav" class="item unfocusedCrimson"
-                   href="skills.php">
+                   href="skills">
 
                     <i class="fas fa-laptop icon"></i>
                     <div class="text">Skills</div>
 
                 </a>
                 <a id="hobbiesNav" class="item unfocusedCrimson"
-                   href="hobbies.php">
+                   href="hobbies">
 
                     <i class="fas fa-book icon"></i>
                     <div class="text">Skills</div>
 
                 </a>
                 <a id="reviewsNav" class="item unfocusedCrimson"
-                    href="reviews.php">
+                    href="reviews">
 
                     <i class="fas fa-star icon"></i>
                     <div class="text">Reviews</div>
@@ -50,13 +52,13 @@
 
     }
 
-    function skillsNav() {
+    static function skillsNav() {
 
         echo '
                     <div id="navigation">
 
                 <a id="contactsNav" class="item unfocusedLimegreen"
-                   href="index.php">
+                   href="index">
 
                     <i class="fas fa-address-book icon"></i>
                     <div class="text">Contacts</div>
@@ -69,14 +71,14 @@
 
                 </div>
                 <a id="hobbiesNav" class="item unfocusedLimegreen"
-                   href="hobbies.php">
+                   href="hobbies">
 
                     <i class="fas fa-book icon"></i>
                     <div class="text">Skills</div>
 
                 </a>
                 <a id="reviewsNav" class="item unfocusedLimegreen"
-                   href="reviews.php">
+                   href="reviews">
 
                     <i class="fas fa-star icon"></i>
                     <div class="text">Reviews</div>
@@ -87,20 +89,20 @@
 
     }
 
-function hobbiesNav() {
+    static function hobbiesNav() {
 
-    echo '
+        echo '
             <div id="navigation">
 
                 <a id="contactsNav" class="item unfocusedDodgerblue"
-                    href="index.php">
+                    href="index">
 
                     <i class="fas fa-address-book icon"></i>
                     <div class="text">Contacts</div>
 
                 </a>
                 <a id="skillsNav" class="item unfocusedDodgerblue"
-                   href="skills.php">
+                   href="skills">
 
                     <i class="fas fa-laptop icon"></i>
                     <div class="text">Skills</div>
@@ -113,7 +115,7 @@ function hobbiesNav() {
 
                 </div>
                 <a id="reviewsNav" class="item unfocusedDodgerblue"
-                    href="reviews.php">
+                    href="reviews">
 
                     <i class="fas fa-star icon"></i>
                     <div class="text">Reviews</div>
@@ -122,28 +124,28 @@ function hobbiesNav() {
 
             </div>';
 
-}
+    }
 
-    function reviewNav() {
+    static function reviewNav() {
 
         echo '
                     <div id="navigation">
 
                 <a id="contactsNav" class="item unfocusedGold"
-                   href="index.php">
+                   href="index">
 
                     <i class="fas fa-address-book icon"></i>
                     <div class="text">Contacts</div>
 
                 </a>
-                <a id="skillsNav" class="item unfocusedGold" href="skills.php">
+                <a id="skillsNav" class="item unfocusedGold" href="skills">
 
                     <i class="fas fa-laptop icon"></i>
                     <div class="text">Skills</div>
 
                 </a>
                 <a id="hobbiesNav" class="item unfocusedGold"
-                   href="hobbies.php">
+                   href="hobbies">
 
                     <i class="fas fa-book icon"></i>
                     <div class="text">Hobbies</div>
@@ -160,61 +162,32 @@ function hobbiesNav() {
 
     }
 
-    function reviewSuccess() {
-        echo '
-                                <div id="reviewHeader">Leave a review of me:</div>
-
-                        <div id="reviewContainer">
-
-                            <form id="reviewForm" action="thanks.php" method="post">
-
-                                <input id="reviewInputField" type="text" name="review"
-                                       placeholder="review"><br>
-                                <input type="submit">
-
-                            </form>
-
-                        </div>';
-    }
-
-    function reviewFailure() {
-
-        echo '<div id="reviewHeader">Error, user already exists!</div>';
-
-    }
-
-    function loginFailure() {
-
-        echo '<div id="reviewHeader">Error, contact system administrator!</div>';
-
-    }
-
-    function thankyouNav() {
+    static function thankyouNav() {
 
         echo '
                         <div id="navigation">
     
                     <a id="contactsNav" class="item unfocusedGold"
-                       href="index.php">
+                       href="index">
     
                         <i class="fas fa-address-book icon"></i>
                         <div class="text">Contacts</div>
     
                     </a>
-                    <a id="skillsNav" class="item unfocusedGold" href="skills.php">
+                    <a id="skillsNav" class="item unfocusedGold" href="skills">
     
                         <i class="fas fa-laptop icon"></i>
                         <div class="text">Skills</div>
     
                     </a>
                     <a id="hobbiesNav" class="item unfocusedGold"
-                        href="hobbies.php">
+                        href="hobbies">
 
                         <i class="fas fa-book icon"></i>
                         <div class="text">Hobbies</div>
 
                     </a>
-                    <a id="reviewsNav" class="item focused gold" href="reviews.php">
+                    <a id="reviewsNav" class="item focused gold" href="reviews">
     
                         <i class="fas fa-star icon"></i>
                         <div class="text">Reviews</div>
@@ -224,3 +197,98 @@ function hobbiesNav() {
                 </div>';
 
     }
+
+    static function userLogin() {
+
+        echo '<div id="reviewHeader">Leave a review of me:</div>
+
+                        <div id="reviewContainer">
+
+                            <form id="reviewForm" action="thanks" method="post">
+
+                                <input id="reviewInputField" type="text" name="review"
+                                       placeholder="review"><br>
+                                <input type="submit">
+
+                            </form>
+
+                        </div>';
+
+    }
+
+    static function userExists() {
+
+        echo '<div id="reviewHeader">
+              Error, user already exists!
+              </div>';
+
+    }
+
+    static function userHasReview() {
+
+        echo '<div id="reviewHeader">
+              You\'ve already submitted a review! <br>
+              Would you like to edit your review?
+              </div>
+              
+              <div id="reviewContainer" style="padding-top: 50px;">
+
+                    <form id="reviewForm" action="editReview" method="post">
+
+                        <input id="reviewInputField" type="text" name="review"
+                               placeholder="review"><br>
+                        <input type="submit">
+
+                    </form>
+
+              </div>';
+
+    }
+
+    static function reviewEdited() {
+
+        echo '<div id="reviewHeader">
+              Review edited successfully!
+              </div>';
+
+    }
+
+    static function loginFailure() {
+
+        echo '<div id="reviewHeader">
+              Error, contact system administrator!
+              </div>';
+
+    }
+
+    static function validationEmpty() {
+
+        echo '<div id="reviewHeader">
+              Error, no fields can be left empty!
+              </div>';
+
+    }
+
+    static function deleteUserVisual() {
+
+        echo '<a id="deleteUser" href="deleteUser">
+                    <i id="deleteUserIcon" class="fas fa-trash-alt"></i>
+                    <div id="deleteUserText">
+                        Delete user
+                    </div>
+              </a>';
+
+    }
+
+    static function editUserVisual() {
+
+        echo '<a id="editUser" href="editUser">
+                    <i id="editUserIcon" class="fas fa-user-edit"></i>
+                    <div id="editUserText">
+                        Edit data
+                    </div>
+              </a>';
+
+    }
+
+}

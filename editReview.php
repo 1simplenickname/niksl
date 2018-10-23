@@ -5,7 +5,6 @@
 
     niksl::connect();
     niksl::beginSession();
-    niksl::initSession();
 
 ?>
 
@@ -47,36 +46,25 @@
 
                         <?php
 
-                            if ($_SESSION["current_user"] == "" or $_SESSION["current_user_password"] == "") {
+                            $review = validate($_POST["review"]);
+
+                            if ($review == "") {
 
                                 template::validationEmpty();
 
                             } else {
 
-                                $query = "SELECT * FROM users WHERE user='$_SESSION[current_user]'";
-                                $result = mysqli_query($connection, $query);
+                                $query = "UPDATE reviews SET review='$review' WHERE user='$_SESSION[current_user_id]'";
+                                $check_result = mysqli_query($connection, $query);
 
-                                if (mysqli_num_rows($result) > 0 ) {
-
-                                    template::userExists();
-
-                                } else {
-
-                                    $query = "INSERT INTO users (user, password) VALUES ('$_SESSION[current_user]', '$_SESSION[current_user_password]')";
-                                    $result = mysqli_query($connection, $query);
-
-                                    niksl::generateID();
-
-                                    template::userLogin();
-                                    template::editUserVisual();
-                                    template::deleteUserVisual();
-
-                                }
+                                template::reviewEdited();
 
                                 niksl::disconnect();
 
                             }
 
+                            template::editUserVisual();
+                            template::deleteUserVisual();
 
                         ?>
 
@@ -95,4 +83,3 @@
     </body>
 
 </html>
-

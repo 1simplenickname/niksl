@@ -1,58 +1,59 @@
 <?php
 
-include('template.php');
+    include('php/template.php');
 
 ?>
 
 <!doctype html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <title>Niks Ļ</title>
-    <!--UTF-8 character support-->
-    <meta charset="UTF-8">
-    <?php generateHeader(); ?>
+        <title>Niks Ļ</title>
+        <!--UTF-8 character support-->
+        <meta charset="UTF-8">
+        <?php template::generateHeader() ?>
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-<div id="container">
+    <div id="container">
 
-    <div id="content">
 
-        <div id="hobbiesScreen">
+        <div id="content">
 
-            <div id="pointOne">
+            <div id="hobbiesScreen">
 
-                I am a massive movie buff. <br>
-                I frequent cinemas and movie premieres more than anyone else I know.
+                <div id="pointOne">
 
-            </div>
+                    I am a massive movie buff. <br>
+                    I frequent cinemas and movie premieres more than anyone else I know.
 
-            <div id="pointTwo">
+                </div>
 
-                I listen to music a lot. Like, a lot. <br>
-                Mostly, 80s music and a bunch of current songs.
+                <div id="pointTwo">
 
-            </div>
+                    I listen to music a lot. Like, a lot. <br>
+                    Mostly, 80s music and a bunch of current songs.
 
-            <div id="pointThree">
+                </div>
 
-                I am a huge comic book nerd. <br>
-                Collecting and reading comic books, especially Marvel comics, is a huge part of my life.
+                <div id="pointThree">
+
+                    I am a huge comic book nerd. <br>
+                    Collecting and reading comic books, especially Marvel comics, is a huge part of my life.
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+        <?php template::hobbiesNav() ?>
 
-    <?php hobbiesNav() ?>
+        </div>
 
-</div>
-
-</body>
+    </body>
 
 </html>

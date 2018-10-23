@@ -1,6 +1,6 @@
 <?php
 
-    include('template.php');
+    include('php/template.php');
 
 ?>
 
@@ -12,7 +12,7 @@
         <title>Niks Ļ</title>
         <!--UTF-8 character support-->
         <meta charset="UTF-8">
-        <?php generateHeader() ?>
+        <?php template::generateHeader() ?>
 
     </head>
 
@@ -41,7 +41,7 @@
 
         </div>
 
-        <?php indexNav() ?>
+        <?php template::indexNav() ?>
 
         </div>
 

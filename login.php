@@ -1,14 +1,12 @@
 <?php
 
-    include('template.php');
-    session_start();
+    include('php/template.php');
+    include('php/classes.php');
 
-    $server = "localhost:3306";
-    $serverUsername = "root";
-    $serverPassword = "parole123";
-
-    $_SESSION["current_user"] = $_POST["username"];
-    $_SESSION["current_user_password"] = $_POST["password"];
+    niksl::connect();
+    niksl::beginSession();
+    niksl::initSession();
+    niksl::generateID();
 
 ?>
 
@@ -20,7 +18,7 @@
         <title>Niks Ļ</title>
         <!--UTF-8 character support-->
         <meta charset="UTF-8">
-        <?php generateHeader(); ?>
+        <?php template::generateHeader() ?>
 
     </head>
 
@@ -50,32 +48,46 @@
 
                         <?php
 
-                            $connection = new mysqli($server, $serverUsername, $serverPassword);
+                            if ($_SESSION["current_user"] == "" or $_SESSION["current_user_password"] == "") {
 
-                            if ($connection->connect_error) {
-                                die("Connection failed: ". $connection->connect_error);
-                            }
-
-                            mysqli_select_db($connection, "niksl");
-
-                            $check_query = "SELECT * FROM users WHERE user='$_SESSION[current_user]' AND password='$_SESSION[current_user_password]'";
-                            $check_result = mysqli_query($connection, $check_query);
-
-                            if (mysqli_num_rows($check_result) == 1 ) {
-
-                                reviewSuccess();
+                                template::validationEmpty();
 
                             } else {
 
-                                loginFailure();
+                                $check_query = "SELECT * FROM users WHERE id='$_SESSION[current_user_id]' AND password='$_SESSION[current_user_password]'";
+                                $check_result = mysqli_query($connection, $check_query);
+
+                                if (mysqli_num_rows($check_result) == 1) {
+
+                                    $query = "SELECT * FROM reviews WHERE user='$_SESSION[current_user_id]'";
+                                    $result = mysqli_query($connection, $query);
+                                    echo mysqli_num_rows($result);
+
+                                    if (mysqli_num_rows($result) == 1 ) {
+
+                                        template::userHasReview();
+                                        template::editUserVisual();
+                                        template::deleteUserVisual();
+
+                                    } else {
+
+                                        template::userLogin();
+                                        template::editUserVisual();
+                                        template::deleteUserVisual();
+
+                                    }
+
+                                } else {
+                                    template::loginFailure();
+                                }
+
+                                niksl::disconnect();
 
                             }
 
-                            $connection->close();
-
                         ?>
 
-                        <a id="exit" class="fas fa-sign-out-alt" href="reviews.php"></a>
+                        <a id="exit" class="fas fa-sign-out-alt" href="php/endSession"></a>
 
                     </div>
 
@@ -83,17 +95,10 @@
 
             </div>
 
-            <?php reviewNav() ?>
+            <?php template::reviewNav() ?>
 
         </div>
 
     </body>
-
-    <?php
-
-        session_unset();
-        session_destroy();
-
-    ?>
 
 </html>
