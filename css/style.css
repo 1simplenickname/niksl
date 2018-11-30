@@ -1,0 +1,554 @@
+body {
+    user-select: none;
+    font-family: helvetica;
+    color: azure;
+}
+
+#container, #content {
+    position: fixed;
+}
+
+#content {
+    width: 100%;
+    height: 90%;
+}
+
+#container, #contactsScreen, #skillsScreen, #hobbiesScreen, #reviewScreen {
+    width: 100%;
+    height: 100%;
+}
+
+#contactsScreen, #skillsScreen, #hobbiesScreen, #reviewScreen, #photo {
+    box-shadow: 0 0 0 10px azure inset;
+}
+
+#contactsScreen, #skillsScreen, #hobbiesScreen, #reviewScreen,
+#photo, #name, #contactsDetail, .xlicon, #signupDesc, #loginDesc,
+#loginHeader, #signupHeader, #loginScreen, #signupScreen, #thankyouHeader, #exit,
+#reviewContainer, #reviewHeader, #userIcon, #userName, #userPassword, #passwordIcon {
+    position: absolute;
+}
+
+#contactsScreen {
+    background-color: crimson;
+}
+
+#photo {
+    width: 250px;
+    height: 250px;
+    top: 25%;
+    left: 50%;
+    background: url("../img/contacts/handsome.JPG") no-repeat;
+    background-size: cover;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+#name {
+    text-align: center;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+#contactsDetail {
+    text-align: center;
+    font-size: 45px;
+    top:  75%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+#callMe, #emailMe, #findMe {
+    transition: color 500ms;
+}
+
+#skillsScreen {
+    background-color: limegreen;
+}
+
+#hobbiesScreen {
+    background-color: dodgerblue;
+}
+
+#pointOne, #pointTwo, #pointThree {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    width: 100%;
+}
+
+#pointOne {
+    top: 10%;
+}
+
+#pointTwo {
+    top: 40%;
+}
+
+#pointThree {
+    top: 65%;
+}
+
+#mikrotik {
+    transition: color 500ms;
+}
+
+#mikrotik:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#cenuklubs, #latvenergo {
+    transition: color 500ms;
+}
+
+#reviewScreen {
+    background-color: gold;
+}
+
+#signupEntrance, #loginEntrance {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.xlicon {
+    font-size: 175px;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+#signupDesc, #loginDesc {
+    left: 50%;
+    top: 60%;
+    text-align: center;
+    font-size: 45px;
+    transform: translateX(-50%);
+}
+
+#loginHeader, #signupHeader {
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+}
+
+#loginScreen, #signupScreen {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 50%;
+}
+
+#userIcon {
+    font-size: 35px;
+    top: 30px;
+    left: 30px;
+}
+#userName {
+    font-size: 25px;
+    line-height: 25px;
+    top: 30px;
+    left: 75px;
+}
+#passwordIcon {
+    font-size: 33px;
+    top: 90px;
+    left: 30px;
+}
+
+#userPassword {
+    font-size: 25px;
+    line-height: 23px;
+    top: 90px;
+    left: 75px;
+}
+
+#deleteUserIcon {
+    font-size: 33px;
+    bottom: 30px;
+    left: 30px;
+    position: absolute;
+    color: crimson;
+}
+
+#deleteUserText {
+    font-size: 25px;
+    bottom: 30px;
+    left: 75px;
+    position: absolute;
+    line-height: 30px;
+    color: crimson;
+}
+
+#editUserIcon {
+    font-size: 33px;
+    bottom: 90px;
+    left: 30px;
+    position: absolute;
+    color: limegreen;
+}
+
+#editUserText {
+    font-size: 25px;
+    bottom: 90px;
+    left: 75px;
+    position: absolute;
+    line-height: 30px;
+    color: limegreen;
+}
+
+#reviewHeader {
+    top: 18%;
+    left: 50%;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+#reviewContainer {
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+}
+
+#reviewInputField {
+    width: 300px;
+    height: 300px;
+}
+
+#exit {
+    top: 30px;
+    right: 30px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+#thankyouHeader {
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    width: 100%;
+    height: 100px;
+}
+
+#navigation {
+    position: relative;
+    top: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+.item, .text, .icon {
+    position: relative;
+}
+
+.icon {
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: color 500ms;
+}
+
+.item {
+    float: left;
+    width: 25%;
+    height: 100%;
+    font-size: 25px;
+}
+
+.text {
+    text-align: center;
+    transition: color 500ms;
+}
+
+#contactsNav, #skillsNav, #hobbiesNav, #reviewsNav {
+    transition: background-color 500ms;
+}
+
+.crimson {
+    color: crimson;
+}
+
+.limegreen {
+    color: limegreen;
+}
+
+.dodgerblue {
+    color: dodgerblue;
+}
+
+.gold {
+    color: gold;
+}
+
+.focused {
+    background-color: azure;
+}
+
+.unfocusedCrimson {
+    background-color: crimson;
+}
+
+.unfocusedLimegreen {
+    background-color: limegreen;
+}
+
+.unfocusedDodgerblue {
+    background-color: dodgerblue;
+}
+
+.unfocusedGold {
+    background-color: gold;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+#callMe:hover, #emailMe:hover, #findMe:hover {
+    transition: color 500ms;
+    cursor: pointer;
+}
+
+#callMe:hover {
+    color: limegreen;
+}
+
+#emailMe:hover {
+    color: dodgerblue;
+}
+
+#findMe:hover {
+    color: gold;
+}
+
+#cenuklubs:hover {
+    cursor: pointer;
+    color: #F26522;
+}
+
+#latvenergo:hover {
+    cursor: pointer;
+    color: #234a97;
+}
+
+#contactsNav:hover {
+    background-color: crimson;
+}
+
+#skillsNav:hover {
+    background-color: limegreen;
+}
+
+#hobbiesNav:hover {
+    background-color: dodgerblue;
+}
+
+#reviewsNav:hover {
+    background-color: gold;
+}
+
+#contactsNav:hover, #skillsNav:hover, #hobbiesNav:hover, #reviewsNav:hover {
+    color: azure;
+    transition: background-color 550ms;
+}
+
+input {
+    height: 25px;
+    -webkit-appearance: none;
+    border: 0;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+}
+
+::placeholder {
+    color: black;
+    font-weight: normal;
+}
+
+/*media queries*/
+/*iPad landscape media query*/
+@media only screen and (max-width: 1248px) {
+
+    .icon {
+        margin-top: 17.5px;
+    }
+
+    .text {
+        font-size: 17.5px;
+    }
+
+}
+
+/*iPad portrait media query*/
+@media only screen and (max-width: 768px) {
+
+}
+
+/*iPhone 5.5" media query*/
+@media only screen and (max-width: 414px) {
+
+    #photo {
+        width: 225px;
+        height: 225px;
+    }
+
+    #name {
+        font-size: 40px;
+    }
+
+    #contactsDetail {
+        font-size: 30px;
+    }
+
+    #pointOne, #pointTwo, #pointThree, #skillfour {
+        width: 385px;
+        font-size: 22px;
+    }
+
+    .xlicon {
+        font-size: 100px;
+    }
+
+    #signupDesc, #loginDesc {
+        font-size: 25px;
+        top: 53%;
+    }
+
+    #userIcon, #passwordIcon {
+        left: 5%;
+    }
+
+    #userName, #userPassword {
+        left: 15%;
+    }
+
+    #reviewHeader {
+        font-size: 25px;
+        transform: translateX(-30%);
+    }
+
+    #exit {
+        right: 5%;
+    }
+
+    .icon {
+        margin-top: 15px;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+}
+
+/*iPhone 4.7" portrait media query*/
+@media only screen and (max-width: 375px) {
+
+    #photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    #name {
+        font-size: 35px;
+    }
+
+    #contactsDetail {
+        font-size: 25px;
+    }
+
+    #pointOne, #pointTwo, #pointThree, #skillfour {
+        width: 340px;
+        font-size: 20px;
+    }
+
+    #signupDesc, #loginDesc {
+        top: 55%;
+    }
+
+    #reviewHeader {
+        font-size: 23px;
+    }
+
+    .icon {
+        margin-top: 10px;
+    }
+
+}
+
+/*iPhone 4" portrait media query*/
+@media only screen and (max-width: 320px) {
+
+    #photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    #name {
+        font-size: 25px;
+    }
+
+    #contactsDetail {
+        font-size: 20px;
+    }
+
+    #pointOne, #pointTwo, #pointThree, #skillfour {
+        width: 290px;
+        font-size: 18px;
+    }
+
+    #signupDesc, #loginDesc {
+        font-size: 20px;
+        top: 60%;
+    }
+
+    #userIcon, #passwordIcon {
+        font-size: 30px;
+    }
+
+    #userName, #userPassword {
+        left: 18%;
+        font-size: 15px;
+    }
+
+    #reviewHeader {
+        font-size: 20px;
+    }
+
+    #reviewInputField {
+        width: 250px;
+    }
+
+    input {
+        width: 250px;
+    }
+
+    .icon {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+}
+
